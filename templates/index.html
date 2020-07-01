@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename = 'css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Corona virus predictor</h1>
+    <p>Based off on multiple factors, this machine learning algorithm predicts the chance of infection of Corona Virus. Please note that this algorithym is not accurate, as it has been trained with limited data.</p>
+  </div>
+</div>
+
+<div class = "container">
+<form method = "POST" action="{{url_for('predict')}}">
+    <label for = "form-control-range" class = "jumbotron" id="jumbo1" >Gender</label>
+    <select class="form-control" name = "genderquery" id="form" placeholder="Gender">
+      <option value="1">Male</option>
+      <option value="2">Female</option>
+    </select>
+    <label for = "form-control-range" class = "jumbotron" id="jumbo1" >Age</label>
+    <input class = "form-control-range" min="0" max="110" oninput = "ageOut.value = ageIn.value" id = "ageIn"value = "0"type ="range" step="1" name = "agequery" class = "form-control" id = "form">
+    <output id = "ageOut">0</output>
+    <button class="btn btn-dark" type="submit">Estimate</button>
+  
+  </form>
+</div>
+</div>
+
+{% endblock %}
+
