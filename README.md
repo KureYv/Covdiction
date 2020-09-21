@@ -1,5 +1,7 @@
-# Covdiction
+# Covdiction 
 A simple machine learning model implemented into a flask web app
 Allowing for predictions based on data
 
-PS Note that this is only applicable for HK residents as the model was trained from HK government data.
+Trained from dataset provided from Hong Kong data
+To use please host it yourself on heroku
+If you want to train your own model feel free to do so and implement it here
